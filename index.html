@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ethowear Collection Salatiga</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-pattern"></div>
+    <div class="floating-elements" id="floatingElements"></div>
+
+    <header>
+      <div class="ornament-top"></div>
+      <div class="header-content">
+        <div class="logo-container">
+          <div class="logo-frame">
+            <div class="logo-inner">
+              <img src="Gambar/Logo_ECS.jpg" alt="Ethowear Collection" />
+            </div>
+          </div>
+        </div>
+        <h1>Ethowear Collection</h1>
+        <p class="tagline">Unity Diverse</p>
+        <div class="badges">
+          <div class="badge">Crafted in Salatiga</div>
+          <div class="badge">From The East To Indonesia</div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <svg viewBox="0 0 40 40">
+          <polyline
+            points="10,15 20,25 30,15"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div class="ornament-bottom"></div>
+    </header>
+
+    <section class="gallery">
+      <h2 class="section-title">Koleksi Kami</h2>
+      <p class="section-subtitle">Warisan Budaya Nusantara</p>
+      <div class="gallery-grid">
+        <article class="card" data-index="1">
+          <div class="card-image">
+            <img src="Gambar/Cendrawasih.jpeg" alt="Cendrawasih" />
+          </div>
+          <div class="card-content">
+            <span class="card-number">01</span>
+            <h3 class="card-title">Cendrawasih</h3>
+            <p class="card-text">
+              Burung cendrawasih adalah burung yang terkenal dengan bulu indah
+              berwarna cerah sehingga disebut juga "bird of paradise" (burung
+              surga). Burung ini berasal dari Papua (Indonesia), Papua Nugini,
+              dan pulau-pulau sekitarnya, hidup di hutan hujan tropis terutama
+              di bagian atas pohon.
+            </p>
+          </div>
+        </article>
+
+        <article class="card" data-index="2">
+          <div class="card-image">
+            <img src="Gambar/Tahuri.jpg" alt="Tahuri" />
+          </div>
+          <div class="card-content">
+            <span class="card-number">02</span>
+            <h3 class="card-title">Tahuri</h3>
+            <p class="card-text">
+              Tahuri adalah alat musik tradisional dari Maluku yang dibuat dari
+              kerang laut. Alat musik ini dimainkan dengan cara ditiup, mirip
+              seperti terompet. Bentuknya memanfaatkan cangkang kerang yang
+              ujungnya dilubangi untuk tempat meniup, sehingga menghasilkan
+              suara nyaring yang khas.
+            </p>
+          </div>
+        </article>
+
+        <article class="card" data-index="3">
+          <div class="card-image">
+            <img src="Gambar/Gong.jpg" alt="Gong Perdamaian" />
+          </div>
+          <div class="card-content">
+            <span class="card-number">03</span>
+            <h3 class="card-title">Gong Perdamaian</h3>
+            <p class="card-text">
+              Gong Perdamaian (sering disebut Gong Perdamaian Dunia) adalah
+              sebuah gong besar yang menjadi simbol perdamaian dan persaudaraan
+              antarbangsa. Gong ini pertama kali diresmikan di Ambon, Maluku
+              pada tahun 2009 setelah sebelumnya diperkenalkan pada acara Bali
+              Bombing Memorial tahun 2002.
+            </p>
+          </div>
+        </article>
+
+        <article class="card" data-index="4">
+          <div class="card-image">
+            <img src="Gambar/tari soya.jpeg" alt="Tari Soya-Soya" />
+          </div>
+          <div class="card-content">
+            <span class="card-number">04</span>
+            <h3 class="card-title">Tari Soya-Soya</h3>
+            <p class="card-text">
+              Tari Soya-Soya adalah tarian tradisional dari Maluku Utara,
+              tepatnya dari daerah Ternate. Tarian ini awalnya adalah tarian
+              perang yang dibawakan untuk menyambut para prajurit yang pulang
+              setelah berperang. Kini Tari Soya-Soya sering ditampilkan dalam
+              upacara adat, penyambutan tamu, dan festival budaya.
+            </p>
+          </div>
+        </article>
+
+        <article class="card" data-index="5">
+          <div class="card-image">
+            <img src="Gambar/Sagu.jpeg" alt="Sagu" />
+          </div>
+          <div class="card-content">
+            <span class="card-number">05</span>
+            <h3 class="card-title">Sagu</h3>
+            <p class="card-text">
+              Sagu adalah bahan pangan pokok yang berasal dari empulur batang
+              pohon sagu (Metroxylon sagu), yaitu jenis palma yang banyak tumbuh
+              di Papua, Maluku, dan Sulawesi. Bagi masyarakat Papua dan Maluku,
+              sagu menjadi makanan pokok penting seperti halnya beras di Jawa.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Ethowear Collection Salatiga</p>
+    </footer>
+
+    <script>
+      // Create floating traditional symbols
+      function createFloatingElements() {
+        const container = document.getElementById("floatingElements");
+        const symbols = ["✦", "❋", "◆", "✿", "❈"];
+
+        for (let i = 0; i < 15; i++) {
+          const element = document.createElement("div");
+          element.className = "float-element";
+          element.textContent =
+            symbols[Math.floor(Math.random() * symbols.length)];
+          element.style.left = Math.random() * 100 + "%";
+          element.style.top = Math.random() * 100 + "%";
+          element.style.animationDelay = Math.random() * 10 + "s";
+          element.style.animationDuration = Math.random() * 15 + 15 + "s";
+          element.style.color = Math.random() > 0.5 ? "#8b4513" : "#d4af37";
+          container.appendChild(element);
+        }
+      }
+
+      // Intersection Observer for card reveal animations
+      function observeCards() {
+        const cards = document.querySelectorAll(".card");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry, index) => {
+              if (entry.isIntersecting) {
+                const cardIndex = parseInt(entry.target.dataset.index);
+                setTimeout(() => {
+                  entry.target.classList.add("visible");
+                }, cardIndex * 200);
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px",
+          }
+        );
+
+        cards.forEach((card) => observer.observe(card));
+      }
+
+      // Parallax effect on scroll
+      function parallaxEffect() {
+        let ticking = false;
+
+        window.addEventListener("scroll", () => {
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              const scrolled = window.pageYOffset;
+              const header = document.querySelector("header");
+              const ornamentTop = document.querySelector(".ornament-top");
+              const ornamentBottom = document.querySelector(".ornament-bottom");
+
+              if (header) {
+                header.style.transform = `translateY(${scrolled * 0.4}px)`;
+              }
+              if (ornamentTop) {
+                ornamentTop.style.transform = `translateY(${scrolled * 0.2}px)`;
+              }
+              if (ornamentBottom) {
+                ornamentBottom.style.transform = `translateY(${
+                  -scrolled * 0.2
+                }px)`;
+              }
+
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+      }
+
+      // Smooth scroll for scroll indicator
+      document
+        .querySelector(".scroll-indicator")
+        ?.addEventListener("click", () => {
+          document.querySelector(".gallery").scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        });
+
+      // Add subtle hover effect to cards
+      document.querySelectorAll(".card").forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateX = (y - centerY) / 30;
+          const rotateY = (centerX - x) / 30;
+
+          card.style.transform = `translateY(-20px) scale(1.03) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+          card.style.transform =
+            "translateY(-20px) scale(1.03) rotateX(0deg) rotateY(0deg)";
+        });
+      });
+
+      // Initialize all animations
+      createFloatingElements();
+      observeCards();
+      parallaxEffect();
+
+      // Add loading animation
+      window.addEventListener("load", () => {
+        document.body.style.opacity = "0";
+        document.body.style.transition = "opacity 0.5s";
+        setTimeout(() => {
+          document.body.style.opacity = "1";
+        }, 100);
+      });
+    </script>
+  </body>
+</html>

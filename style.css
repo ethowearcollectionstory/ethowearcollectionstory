@@ -1,0 +1,601 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  background: #f5f1e8;
+  color: #2c2416;
+  overflow-x: hidden;
+}
+
+/* Animated Background dengan motif batik */
+.bg-pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #f5f1e8 0%, #e8dcc4 100%);
+  opacity: 0.9;
+}
+
+.bg-pattern::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(139, 69, 19, 0.02) 10px,
+      rgba(139, 69, 19, 0.02) 20px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 10px,
+      rgba(139, 69, 19, 0.02) 10px,
+      rgba(139, 69, 19, 0.02) 20px
+    );
+  animation: patternMove 60s linear infinite;
+}
+
+@keyframes patternMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(40px, 40px);
+  }
+}
+
+/* Floating traditional elements */
+.floating-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.float-element {
+  position: absolute;
+  opacity: 0.15;
+  font-size: 3rem;
+  animation: floatAround 20s infinite ease-in-out;
+}
+
+@keyframes floatAround {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translate(100px, -100px) rotate(180deg);
+    opacity: 0.2;
+  }
+}
+
+/* Header dengan nuansa tradisional */
+header {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, rgba(139, 69, 19, 0.05), transparent),
+    radial-gradient(circle at 50% 0%, rgba(184, 134, 11, 0.1), transparent 70%);
+  overflow: hidden;
+}
+
+/* Ornamen tradisional di header */
+.ornament-top,
+.ornament-bottom {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(139, 69, 19, 0.3) 20%,
+    rgba(184, 134, 11, 0.3) 50%,
+    rgba(139, 69, 19, 0.3) 80%,
+    transparent 100%
+  );
+  opacity: 0.3;
+}
+
+.ornament-top {
+  top: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 100%, 0 60%);
+}
+
+.ornament-bottom {
+  bottom: 0;
+  clip-path: polygon(0 40%, 50% 0, 100% 40%, 100% 100%, 0 100%);
+}
+
+.header-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 40px;
+  max-width: 900px;
+  animation: fadeInDown 1.2s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo dengan border tradisional */
+.logo-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 40px;
+  animation: logoReveal 1.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes logoReveal {
+  0% {
+    transform: scale(0) rotate(360deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.logo-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  background: linear-gradient(45deg, #8b4513, #d4af37, #8b4513, #d4af37);
+  background-size: 300% 300%;
+  animation: borderShine 4s ease infinite;
+  clip-path: polygon(
+    15% 0%,
+    85% 0%,
+    100% 15%,
+    100% 85%,
+    85% 100%,
+    15% 100%,
+    0% 85%,
+    0% 15%
+  );
+}
+
+@keyframes borderShine {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.logo-inner {
+  width: 100%;
+  height: 100%;
+  background: #f5f1e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(
+    15% 0%,
+    85% 0%,
+    100% 15%,
+    100% 85%,
+    85% 100%,
+    15% 100%,
+    0% 85%,
+    0% 15%
+  );
+  overflow: hidden;
+  box-shadow: inset 0 0 30px rgba(139, 69, 19, 0.2);
+}
+
+.logo-inner img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  transition: transform 0.6s ease;
+}
+
+.logo-frame:hover .logo-inner img {
+  transform: scale(1.1);
+}
+
+/* Typography dengan sentuhan tradisional */
+h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #8b4513;
+  text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+  letter-spacing: 2px;
+  position: relative;
+  animation: titleFade 2s ease-out 0.5s both;
+}
+
+@keyframes titleFade {
+  from {
+    opacity: 0;
+    letter-spacing: 10px;
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 2px;
+  }
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+.tagline {
+  font-size: 1.3rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: #8b6914;
+  margin-bottom: 30px;
+  margin-top: 25px;
+  font-style: italic;
+  animation: fadeIn 2s ease-out 1s both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.badges {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.badge {
+  padding: 15px 30px;
+  border-radius: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: rgba(139, 69, 19, 0.1);
+  border: 2px solid #8b4513;
+  color: #8b4513;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  animation: badgeSlide 1.5s ease-out 1.5s both;
+  clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+}
+
+@keyframes badgeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 0.4),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.badge:hover::before {
+  left: 100%;
+}
+
+.badge:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(139, 69, 19, 0.3);
+  background: rgba(212, 175, 55, 0.2);
+}
+
+/* Scroll indicator tradisional */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(15px);
+  }
+}
+
+.scroll-indicator svg {
+  width: 40px;
+  height: 40px;
+  stroke: #8b4513;
+  fill: none;
+  stroke-width: 2;
+}
+
+/* Gallery Section */
+.gallery {
+  position: relative;
+  z-index: 5;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 100px 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 20px;
+  color: #8b4513;
+  position: relative;
+  padding-bottom: 30px;
+  font-weight: 700;
+}
+
+.section-title::after {
+  content: "✦";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  color: #d4af37;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #8b6914;
+  font-style: italic;
+  margin-bottom: 60px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 50px;
+  padding: 20px;
+}
+
+/* Card dengan border ukiran tradisional */
+.card {
+  position: relative;
+  background: #fff;
+  overflow: visible;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(80px) rotateX(10deg);
+  box-shadow: 0 10px 30px rgba(139, 69, 19, 0.15),
+    inset 0 0 0 2px rgba(139, 69, 19, 0.1);
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0) rotateX(0deg);
+}
+
+/* Corner ornaments */
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #d4af37;
+  z-index: 10;
+  transition: all 0.4s ease;
+}
+
+.card::before {
+  top: -5px;
+  left: -5px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.card::after {
+  bottom: -5px;
+  right: -5px;
+  border-left: none;
+  border-top: none;
+}
+
+.card:hover::before,
+.card:hover::after {
+  width: 60px;
+  height: 60px;
+}
+
+.card:hover {
+  transform: translateY(-20px) scale(1.03);
+  box-shadow: 0 25px 50px rgba(139, 69, 19, 0.25),
+    inset 0 0 0 3px rgba(212, 175, 55, 0.3);
+}
+
+.card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: #e8dcc4;
+}
+
+.card-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), transparent);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.card:hover .card-image::before {
+  opacity: 1;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: sepia(0.1);
+}
+
+.card:hover .card-image img {
+  transform: scale(1.15);
+  filter: sepia(0.2);
+}
+
+.card-content {
+  padding: 30px;
+  background: linear-gradient(to bottom, #fff, #f9f6f0);
+}
+
+.card-number {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #d4af37;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #8b4513;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.card-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #d4af37, transparent);
+}
+
+.card-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #5a4a3a;
+  text-align: justify;
+}
+
+/* Footer dengan ornamen */
+footer {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to top, rgba(139, 69, 19, 0.05), transparent),
+    #f5f1e8;
+  border-top: 3px double #8b4513;
+  margin-top: 100px;
+}
+
+footer::before {
+  content: "◆ ◆ ◆";
+  display: block;
+  color: #d4af37;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  letter-spacing: 20px;
+}
+
+footer p {
+  color: #8b4513;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 20px;
+  }
+
+  .logo-container {
+    width: 160px;
+    height: 160px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .badges {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card::before,
+  .card::after {
+    width: 30px;
+    height: 30px;
+  }
+}
